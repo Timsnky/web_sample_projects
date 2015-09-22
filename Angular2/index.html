@@ -1,0 +1,251 @@
+<html>
+   
+   <head>
+      <title>Android Phone Shops</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width-device-width, initial-scale=1">
+       <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+      <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   
+   <body ng-app="phoneApp">
+      <div class="wrapper">
+         <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#display">Display</a></li>
+                  <li><a href="#add">Add</a></li>
+                  <li><a href="#review">Reviews</a></li>
+               </ul>
+            </div>
+         </nav>
+      
+
+         <div ng-view></div>
+
+      </div>
+      <script type="text/ng-template" id="display.html">
+         <h4> Display Phones on Sale</h4>
+         <div ng-controller = "displayController">
+
+            <p>Shop Name or Phone Name: <input type = "text" ng-model = "search"></p>
+
+            <p>You serched for {{search}}</p>
+
+
+            <h4>Shop Results</h4>
+         
+         <table>
+            <tr>
+               <th>Image</th>
+               <th>Shop Name</th>
+               <th>Phone Name</th>
+               <th>Price</th>
+            </tr>
+
+            <tr ng-repeat = "phone in phones | filter: search"> 
+               <td><img src={{phone.img}}></td>
+               <td>{{phone.phoneName}}</td>
+               <td>{{phone.shopName}}</td>
+               <td>{{phone.price}}</td>
+            </tr>
+         </table>
+      </div>
+
+
+      </script>
+
+      <script type="text/ng-template" id="add.html">
+         <h4>Add Phone</h4>
+      </script>
+
+      <script type="text/ng-template" id="review.html">
+         <h4>Review</h4>
+
+
+         <div ng-controller="reviewController" class="row">
+           <div class="col-sm-8">
+               <phone name = "Sony"></phone>
+
+               <h5>Comments</h5>
+               <table class="reviews">
+
+                  <tr ng-repeat = "review in reviews">
+
+                     <td><p><b>Name:</b> {{review.name}} </br>
+                        <b>Email:</b> {{review.email}} </br>
+                        <b>Comment:</b> {{review.comment}}
+                     </p> </td>
+                     
+                  </tr>
+               </table>
+
+           </div>
+           <div class="col-sm-4">
+               <form role="form"  name="reviewForm" novalidate>
+                  <p>Name:<br>
+                     <input class="form-control" type="text" name="user" ng-model="user" required>
+                     <span style="color:red" ng-show="reviewForm.user.$dirty && reviewForm.user.$invalid">
+                        <span ng-show="reviewForm.user.$error.required">Username is required.</span>
+                     </span>
+                  </p>
+
+                  <p>Email:<br>
+                     <input class="form-control" type="email" name="email" ng-model="email" required>
+                     <span style="color:red" ng-show="reviewForm.email.$dirty && reviewForm.email.$invalid">
+                        <span ng-show="reviewForm.email.$error.required">Email is required.</span>
+                        <span ng-show="reviewForm.email.$error.email">Invalid email address.</span>
+                     </span>
+                  </p>
+
+                  <p>Review:<br>
+                     <textarea rows="4" class="form-control" type="text" name="comment" ng-model="comment" required></textarea>
+                     <span style="color:red" ng-show="reviewForm.comment.$dirty && reviewForm.comment.$invalid">
+                        <span ng-show="reviewForm.comment.$error.required">Comment required.</span>
+                     </span>
+                  </p>
+
+                  <p>
+                  <input class="btn btn-success" type="submit" ng-click="submitReview()"
+                  ng-disabled="reviewForm.user.$dirty && reviewForm.user.$invalid ||  
+                  reviewForm.email.$dirty && reviewForm.email.$invalid  ||  reviewForm.comment.$dirty && reviewForm.comment.$invalid">
+                  </p>
+               </form>
+
+               <div>
+                  <h4>Preview</h4>
+                  <p><b>Name:</b> {{user}}</p>
+                  <p><b>Email:</b> {{email}}</p>
+                  <p><b>Comment:</b> {{comment}}</p>  
+               </div>
+           </div>
+         </div>
+      </script>
+
+      
+      
+      <script>
+         var phoneApp = angular.module("phoneApp", ['ngRoute']);
+         phoneApp.config(['$routeProvider', function($routeProvider) {
+            $routeProvider. 
+
+            when('/display', {
+               templateUrl: 'display.html',
+               controller: 'displayController'
+            }).
+
+            when('/add', {
+               templateUrl: 'add.html',
+               controller: 'addController'
+            }).
+
+            when('/review', {
+               templateUrl: 'review.html',
+               controller: 'reviewController'
+            }).
+
+            otherwise({
+               redirectTo: '/display'
+            });
+         }]);
+
+         phoneApp.directive('phone', function() {
+            var directive = {};
+            directive.restrict = 'E';
+            directive.template = "<div><img src={{phone.img}}><p>Phone: <b>{{phone.name}}</b></p><p>Price: <b>{{phone.price}}</b></p><p>Shop: <b>{{phone.shop}}</b></p></div>";
+            
+            directive.scope = {
+               phone : "=name"
+            }
+            
+            directive.compile = function(element, attributes) {
+               
+               var linkFunction = function($scope, element, attributes) {
+                  element.html("<div><img src='"+$scope.phone.img+"'><p>Phone: <b>"+$scope.phone.name +"</b></p><p>Price: <b>"+$scope.phone.price+"</b></p><p>Shop: <b>"+$scope.phone.shop+"</b></p><br/></div>");
+               }
+               return linkFunction;
+            }
+            
+            return directive;
+         });
+
+         
+
+         phoneApp.controller('displayController', function($scope) {
+            $scope.phones = [
+               {img:"img/phone1.jpg",phoneName:'Samsung', shopName:'Al Amana', price:'40000'},
+               {img:"img/phone2.jpg",phoneName:'Sony', shopName:'Al Amana', price:'45000'},
+               {img:"img/phone3.jpg",phoneName:'HTC', shopName:'Al Amana', price:'44000'},
+               {img:"img/phone4.jpg",phoneName:'LG', shopName:'Al Amana', price:'34000'},
+               {img:"img/phone5.jpg",phoneName:'Nokia', shopName:'Al Amana', price:'20000'},
+               {img:"img/phone6.jpg",phoneName:'Huawei', shopName:'Al Amana', price:'15000'},
+               {img:"img/phone1.jpg",phoneName:'Samsung', shopName:'Big Man', price:'40000'},
+               {img:"img/phone2.jpg",phoneName:'Sony', shopName:'Big Man', price:'45000'},
+               {img:"img/phone3.jpg",phoneName:'HTC', shopName:'Big Man', price:'44000'},
+               {img:"img/phone4.jpg",phoneName:'LG', shopName:'Big Man', price:'34000'},
+               {img:"img/phone5.jpg",phoneName:'Nokia', shopName:'Big Man', price:'20000'},
+               {img:"img/phone6.jpg",phoneName:'Huawei', shopName:'Big Man', price:'15000'},
+               {img:"img/phone1.jpg",phoneName:'Samsung', shopName:'Genesis', price:'40000'},
+               {img:"img/phone2.jpg",phoneName:'Sony', shopName:'Genesis', price:'45000'},
+               {img:"img/phone3.jpg",phoneName:'HTC', shopName:'Genesis', price:'44000'},
+               {img:"img/phone4.jpg",phoneName:'LG', shopName:'Genesis', price:'34000'},
+               {img:"img/phone5.jpg",phoneName:'Nokia', shopName:'Genesis', price:'20000'},
+               {img:"img/phone6.jpg",phoneName:'Huawei', shopName:'Genesis', price:'15000'},
+            ];
+
+         });
+
+         phoneApp.controller('addController', function($scope) {
+
+         });
+
+         phoneApp.controller('reviewController', function($scope) {
+            $scope.Sony = {};
+            $scope.Sony.name = "Sony Xperia Z5";
+            $scope.Sony.price  = 60000;
+            $scope.Sony.shop = "Al Amana";
+            $scope.Sony.img = "img/phone2.jpg";
+
+            $scope.reviews = [
+               {name:'Timothy',email:'timsnky@gmail.com', comment:'Very Nice phone i like the premium finish on the back and its sleek feel'},{name:'Kimathi',email:'tkimathi@cytonn.com', comment:'The camera has never been any better than this and even its response time is awesome. This was money well spent '}];
+
+            $scope.submitReview = function() {
+               $scope.singleReview = {};
+               $scope.singleReview.name = $scope.user;
+               $scope.singleReview.email = $scope.email;
+               $scope.singleReview.comment = $scope.comment;
+               $scope.reviews.push($scope.singleReview); 
+
+               $scope.user = null;
+               $scope.email = null;
+               $scope.comment = null;         
+            }
+         });
+         
+      </script>
+      
+   </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

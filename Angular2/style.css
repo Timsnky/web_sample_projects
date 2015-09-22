@@ -1,0 +1,41 @@
+.wrapper {
+	width: 100%;
+	height: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #F2f2f2;
+	margin-bottom: 10px;
+}
+
+
+h3, h2, h5, h4 {
+	margin-left: 50px;
+}
+
+.inputSection {
+	float: left; 
+	width: 300px;
+}
+
+table, th , td{
+	border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+ }
+
+ th, td {
+ 	min-width: 100px;
+ 	width: auto;
+ }
+
+ img {
+ 	width: 80px;
+ 	height: 100px;
+ }
+
+ .reviews td {
+ 	border: none;
+ }
