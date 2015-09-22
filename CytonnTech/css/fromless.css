@@ -1,0 +1,100 @@
+.left, #logo, #mainnav a, #overview, #background, figure {
+  float: left; }
+
+.wrapper {
+  min-width: 740px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #F2F2F2; }
+
+.banner img {
+  max-width: 100%; }
+
+.cream {
+  background: #F2F2F2; }
+
+.content {
+  padding: 40px 20px 20px 20px;
+  margin-top: 30px; }
+
+#logo img {
+  width: 150px; }
+
+#name h1 {
+  text-align: right; }
+
+#mainnav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px; }
+#mainnav a {
+  display: block;
+  width: 20%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #006666;
+  color: #FFFFFF; }
+  #mainnav a:hover, #mainnav a:active, #mainnav a:focus {
+    background-color: #43A6CB;
+    text-decoration: none; }
+  #mainnav a .thispage {
+    background-color: #43A6CB;
+    text-decoration: none; }
+
+a {
+  font-weight: bold;
+  text-decoration: none; }
+
+#overview {
+  width: 56%;
+  margin-left: 2%; }
+
+#background {
+  width: 20%;
+  margin-left: 4%; }
+
+#comment {
+  width: 50%;
+  height: 200px;
+  padding: 10px; }
+
+#submit {
+  height: 40px;
+  color: white;
+  background: #006666;
+  margin-top: 20px;
+  font-size: medium;
+  vertical-align: center; }
+
+article, aside {
+  background: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 4% 4% 4% 4%; }
+
+figure {
+  display: block; }
+  figure img {
+    width: 200px; }
+
+figcaption {
+  font-size: 0.875em;
+  font-weight: bold;
+  text-align: center;
+  display: block; }
+
+footer {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2%;
+  clear: left;
+  background: #006666;
+  color: #FFFFFF; }
+
+input {
+  width: 50%;
+  padding: 10px; }
+
+/*# sourceMappingURL=fromless.css.map */
