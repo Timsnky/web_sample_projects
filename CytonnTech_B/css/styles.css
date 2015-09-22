@@ -1,0 +1,142 @@
+/*Classes*/
+.wrapper {
+	width: 100%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #F2f2f2;
+	margin-bottom: 10px;
+}
+
+.logo {
+	width: 150px;
+}
+
+.company {
+	text-align: center;
+}
+
+.navbar-brand {
+ 		display: none;
+ }
+
+.navbar-default {
+  	background-color: #006666;
+  	border-radius: 10px;
+ }
+
+.navbar-default .navbar-nav li a {
+ 	color: #FFFFFF;
+ 	font-weight: bold;
+ }
+
+.carousel-inner .item  img {
+	max-height: 500px;
+}
+
+.banner {
+	max-width: 100%;
+}
+
+.container {
+	width: 100%; 
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+ .mainsection h2{
+ 	padding-left: 20px;
+ }
+
+.content {
+	background: #FFFFFF;
+	margin: 20px 15px 20px 15px;
+	padding:  15px;
+	border-radius: 10px;
+}
+
+.content h2 {
+	margin-bottom: 30px; 
+}
+
+.team img {
+ 	width: 100%;
+ 	max-width: 450px;
+ 	border-radius: 10px;
+	box-shadow: 1px 1px 15px #999999;
+ }
+
+.form-group {
+ 	max-width: 500px;
+ 	margin-left: 20px;
+ }
+
+.btn-success {
+ 	margin-left: 20px;
+ 	background: #006666;
+ }
+
+/*Id's*/
+#overview {
+	margin-right: 0px;
+}
+
+#background {
+	margin-left: 0px;
+}
+
+/*Elements*/
+footer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2%;
+	clear: left;
+	background: #006666;
+	color: #FFF;
+	border-radius: 10px;
+}
+
+figcaption {
+	font-size: 0.875em;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+}
+
+
+/*Media Query for Small Screens below 768px*/
+ @media (max-width: 768px) {
+	h1 {
+ 		text-align: left;
+ 	}
+
+ 	.navbar-brand {
+ 		display: block;
+ 	}
+
+ 	.logo, .company {
+ 		display: none;
+ 	}
+
+ 	.navbar-default .navbar-brand {
+ 		color: #FFFFFF;
+ 		font-weight: bold;
+ 		text-transform: uppercase;
+ 	}
+
+ 	.navbar-default .navbar-brand:hover {
+ 		color: #000;
+ 	}
+
+ 	.content{
+ 		margin: 10px;
+ 	}
+
+ 	figcaption {
+		text-align: left;
+	}
+
+	.team img {
+		max-width: 300px; 
+ 	}
+}
