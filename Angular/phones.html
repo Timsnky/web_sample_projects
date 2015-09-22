@@ -1,0 +1,64 @@
+<html>
+   
+   <head>
+      <title>Android Phone Shops</title>
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   
+   <body>
+      <h3>Android Phone Shop</h3>
+      <div ng-app = "phoneApp" ng-controller = "phoneController">
+
+            <p>Shop Name or Phone Name: <input type = "text" ng-model = "search"></p>
+
+            <p>You serched for {{search}}</p>
+
+
+            <h4>Shop Results</h4>
+         
+         <table>
+            <tr>
+               <th>Shop Name</th>
+               <th>Phone Name</th>
+               <th>Price</th>
+            </tr>
+
+            <tr ng-repeat = "phone in phones | filter: search"> 
+               <td><img src={{phone.img}}></td>
+               <td>{{phone.phoneName}}</td>
+               <td>{{phone.shopName}}</td>
+               <td>{{phone.price}}</td>
+            </tr>
+         </table>
+      </div>
+      
+      <script>
+         var phoneApp = angular.module("phoneApp", []);
+         phoneApp.controller('phoneController', function($scope) {
+            $scope.phones = [
+               {img:"img/phone1.jpg",phoneName:'Samsung', shopName:'Al Amana', price:'40000'},
+               {img:"img/phone2.jpg",phoneName:'Sony', shopName:'Al Amana', price:'45000'},
+               {img:"img/phone3.jpg",phoneName:'HTC', shopName:'Al Amana', price:'44000'},
+               {img:"img/phone4.jpg",phoneName:'LG', shopName:'Al Amana', price:'34000'},
+               {img:"img/phone5.jpg",phoneName:'Nokia', shopName:'Al Amana', price:'20000'},
+               {img:"img/phone6.jpg",phoneName:'Huawei', shopName:'Al Amana', price:'15000'},
+               {img:"img/phone1.jpg",phoneName:'Samsung', shopName:'Big Man', price:'40000'},
+               {img:"img/phone2.jpg",phoneName:'Sony', shopName:'Big Man', price:'45000'},
+               {img:"img/phone3.jpg",phoneName:'HTC', shopName:'Big Man', price:'44000'},
+               {img:"img/phone4.jpg",phoneName:'LG', shopName:'Big Man', price:'34000'},
+               {img:"img/phone5.jpg",phoneName:'Nokia', shopName:'Big Man', price:'20000'},
+               {img:"img/phone6.jpg",phoneName:'Huawei', shopName:'Big Man', price:'15000'},
+               {img:"img/phone1.jpg",phoneName:'Samsung', shopName:'Genesis', price:'40000'},
+               {img:"img/phone2.jpg",phoneName:'Sony', shopName:'Genesis', price:'45000'},
+               {img:"img/phone3.jpg",phoneName:'HTC', shopName:'Genesis', price:'44000'},
+               {img:"img/phone4.jpg",phoneName:'LG', shopName:'Genesis', price:'34000'},
+               {img:"img/phone5.jpg",phoneName:'Nokia', shopName:'Genesis', price:'20000'},
+               {img:"img/phone6.jpg",phoneName:'Huawei', shopName:'Genesis', price:'15000'},
+            ];
+         });
+      </script>
+      
+   </body>
+</html>

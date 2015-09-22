@@ -1,0 +1,24 @@
+h2 {
+	margin-left: 50px;
+}
+
+.inputSection {
+	float: left; 
+	width: 300px;
+}
+
+table, th , td {
+	border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+ }
+
+ th, td {
+ 	min-width: 100px;
+ 	width: auto;
+ }
+
+ img {
+ 	width: 80px;
+ 	height: 100px;
+ }
