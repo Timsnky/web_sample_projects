@@ -1,0 +1,53 @@
+<h4>Add Phone</h4>
+
+<div ng-controller="addController" class="row">
+
+    <div class="col-sm-6">
+        <form role="form"  name="addForm" novalidate>
+            <p>Phone Name:<br>
+                <select>
+                    <option ng-repeat="phone in phones | filter: 'Al Amana'" value="{{phone.phoneName}}" ng-model="phoneName">
+                        {{phone.phoneName}}
+                    </option>
+                </select>
+            </p>
+
+            <p>Shop Name:<br>
+                <select>
+                    <option ng-repeat="phone in phones | filter: 'Sony'" value="{{phone.shopName}}" ng-model="shopName">
+                        {{phone.shopName}}
+                    </option>
+                </select>
+            </p>
+
+            <p>Price:<br>
+                <input class="form-control" type="number" name="price" ng-model="price" required>
+         <span style="color:red" ng-show="reviewForm.price.$dirty && reviewForm.price.$invalid">
+            <span ng-show="addForm.price.$error.required">Price.</span>
+         </span>
+            </p>
+
+            <p>
+                <button class="anim_button">Animated Button</button>
+            </p>
+        </form>
+
+        <div>
+
+    <div class="col-sm-6">
+
+        <h5>Comments</h5>
+        <table class="reviews">
+
+            <tr ng-repeat = "review in reviews">
+
+                <td><p><b>Name:</b> {{review.name}} </br>
+                    <b>Email:</b> {{review.email}} </br>
+                    <b>Comment:</b> {{review.comment}}
+                </p> </td>
+
+            </tr>
+        </table>
+
+    </div>
+</div>

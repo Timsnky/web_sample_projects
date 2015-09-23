@@ -1,0 +1,26 @@
+<h4> Display Phones on Sale</h4>
+<div ng-controller = "displayController">
+
+   <p>Shop Name or Phone Name: <input type = "text" ng-model = "search"></p>
+
+   <p>You serched for {{search}}</p>
+
+
+   <h4>Shop Results</h4>
+
+   <table>
+      <tr>
+         <th>Image</th>
+         <th>Phone Name</th>
+         <th>Shop Name</th>
+         <th>Price</th>
+      </tr>
+
+      <tr ng-repeat = "phone in phones | filter: search"> 
+         <td><img src={{phone.img}}></td>
+         <td>{{phone.phoneName}}</td>
+         <td>{{phone.shopName}}</td>
+         <td>{{phone.price}}</td>
+      </tr>
+   </table>
+</div>
