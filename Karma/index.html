@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation Tester</title>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="calcApp" ng-controller="calcController">
+    <h3>Math Calculator</h3>
+    <p>
+        First Number: <input type="number" ng-model="firstNumber">
+    </p>
+    <p>
+        Second Number: <input type="number" ng-model="secondNumber">
+    </p>
+    <p>
+        Product: <span ng-bind="product()"></span></br>
+    </p>
+
+    <script src="app/module.js"></script>
+    <script src="app/controller.js"></script>
+</body>
+</html>
