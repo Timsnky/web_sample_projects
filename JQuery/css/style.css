@@ -1,0 +1,31 @@
+.wrapper {
+    max-width: 1000px;
+    background-color: #f2f2f2;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.myTable {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.myTable th {
+    background-color: #006666;
+    color: white;
+}
+
+.myTable td, .myTable th {
+    width: 20%;
+}
+
+.myTable td {
+    text-align: center;
+}
+
+table, td, tr, th {
+    border: 1px solid black;
+    border-collapse: collapse ;
+}

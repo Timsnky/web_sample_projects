@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>JQuery Sample</title>
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <div>
+            <p>
+                Phone Name: <input type="text" id="phoneName">
+            </p>
+            <p>
+                Shop Name: <input type="text" id="shopName">
+            </p>
+            <p>
+                Price: <input type="number" id="price">
+            </p>
+            <p>
+                <input type="button" value="Add Item" onclick="addRow(this)">
+            </p>
+
+        </div>
+        <table class="myTable">
+            <tr>
+                <th>Phone Name</th>
+                <th>Shop Name</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Sony</td>
+                <td>Al Amana</td>
+                <td>50000</td>
+                <td><button class="edit" onclick="editRow(this)">Edit</button></td>
+                <td><button class="del" onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Samsung</td>
+                <td>Big Man</td>
+                <td>45000</td>
+                <td><button class="edit" onclick="editRow(this)">Edit</button></td>
+                <td><button class="del" onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>LG</td>
+                <td>Genesis</td>
+                <td>40000</td>
+                <td><button class="edit" onclick="editRow(this)">Edit</button></td>
+                <td><button class="del" onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
