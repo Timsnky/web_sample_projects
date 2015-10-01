@@ -12,7 +12,7 @@
         <div class="wrapper">
             <h3>Phone Display</h3>
             <div>
-                <form action="index.php" method="post">
+                <form action="index.php" method="post" name="f">
                     <select name="phone">
                         <option value="All" selected>All</option>
                         <option value="Samsung">Samsung</option>

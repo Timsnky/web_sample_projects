@@ -16,21 +16,18 @@ class PhoneController
 
 
     function addTable($phones) {
-        $length = count($phones);
+        $rows = "";
 
-        for($i = 0; $i < $length; $i ++) {
-            $phone = array();
-            $phone = $phones[$i];
+        foreach ($phones as $key => $phone) {
             $rows = $rows . "
                     <tr>
-                        <td><img src=$phone[0]></td>
-                        <td>$phone[1]</td>
-                        <td>$phone[2]</td>
-                        <td>$phone[3]</td>
+                        <td><img src=$phone->phoneImage></td>
+                        <td>$phone->phoneName</td>
+                        <td>$phone->phoneShop</td>
+                        <td>$phone->phonePrice</td>
                      </tr>
                 ";
         }
-
         return $rows;
     }
 }

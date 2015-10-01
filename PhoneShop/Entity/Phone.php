@@ -8,7 +8,7 @@ class Phone
     public $phoneShop;
     public $phonePrice;
 
-    function _construct($image, $name, $shop, $price) {
+    function __construct($image, $name, $shop, $price) {
         $this->phoneImage = $image;
         $this->phoneName = $name;
         $this->phoneShop = $shop;

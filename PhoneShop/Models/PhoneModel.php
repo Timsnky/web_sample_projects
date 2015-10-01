@@ -26,12 +26,8 @@ class PhoneModel
         $length = $this->getArrayLength();
         $filteredArray = array();
         for ($i = 0; $i < $length ; $i ++) {
-            $phoneArray = array();
-            array_push($phoneArray, $this->phones[$i][0]);
-            array_push($phoneArray, $this->phones[$i][1]);
-            array_push($phoneArray, $this->phones[$i][2]);
-            array_push($phoneArray, $this->phones[$i][3]);
-            array_push($filteredArray, $phoneArray);
+            $phone = new Phone($this->phones[$i][0],$this->phones[$i][1],$this->phones[$i][2],$this->phones[$i][3]);
+            array_push($filteredArray, $phone);
         }
         return $filteredArray;
     }
@@ -46,12 +42,8 @@ class PhoneModel
 
         for ($i = 0; $i < $length ; $i ++) {
             if($filter == $this->phones[$i][1]) {
-                $phoneArray = array();
-                array_push($phoneArray, $this->phones[$i][0]);
-                array_push($phoneArray, $this->phones[$i][1]);
-                array_push($phoneArray, $this->phones[$i][2]);
-                array_push($phoneArray, $this->phones[$i][3]);
-                array_push($filteredArray, $phoneArray);
+                $phone = new Phone($this->phones[$i][0],$this->phones[$i][1],$this->phones[$i][2],$this->phones[$i][3]);
+                array_push($filteredArray, $phone);
             }
         }
         return $filteredArray;
