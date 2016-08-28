@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>My Site</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+		
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script type='text/javascript' src='scripts/respond.min.js'></script>
+		<!-- <link rel="stylesheet" media="screen and (max-width: 1024px)"  href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script> -->
+		<link href="styles/styles.css" type="text/css" rel="stylesheet"/> 
+		<script src="scripts/slide.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+		
+			<header data-role="header">				
+				<h1>My Site</h1>
+				
+				<nav data-role="navbar" id="menu">
+					<ul>
+						<li><a href="index.html" title="Home">Home</a></li>
+						<li><a href="studies.html" title="Studies">Studies</a></li>
+						<li><a href="career.html" title="Professional Career">Professional Career</a></li>
+						<li><a href="hobbies.html" title="Hobbies and Family Events">Hobbies and Family Events</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<div data-role="content" id="content">							
+				<section id="main">
+					<h3>My Hobbies</h3>
+					<ul>
+						<li>Reading</li>
+						<li>Blogging</li>
+						<li>Web Browsing</li>
+						<li>Travelling and Exploring exotic countries</li>
+					</ul>
+					<h3>Family Events</h3>
+					<p>Here are some of my photos for a cousins wedding I attended</p>
+					
+					<div id="slider">
+					  <a href="#" class="control_next">>></a>
+					  <a href="#" class="control_prev"><</a>
+					  <ul>
+					    <li><img src="images/slide1.jpg" alt="" href="http://www.google.com"/></li>
+					    <li><img src="images/slide2.jpg" alt="" /></li>
+					    <li><img src="images/slide3.jpg" alt="" /></li>
+					    <li><img src="images/slide4.jpg" alt="" /></li>
+					    <li><img src="images/slide5.jpg" alt="" /></li>
+					    <li><img src="images/slide6.jpg" alt="" /></li>
+					    <li><img src="images/slide7.jpg" alt="" /></li>
+					  </ul>  
+					</div>
+					
+					<div class="slider_option">
+					  <input type="checkbox" id="checkbox">
+					  <label for="checkbox">Autoplay Slider</label>
+					</div> 
+				</section>			
+			</div>
+			
+			<aside id="sidebar">
+				<h4>Social Sites</h4>
+				<p>1. <a href="http://www.facebook.com">Facebook</a></p>
+				<p>2. <a href="http://www.twitter.com">Twitter</a></p>
+				<p>3. <a href="http://www.linkedin.com">LinkedIn</a></p>
+				<p>4. <a href="http://www.myspace.com">Myspace</a></p>
+				<p>5. <a href="http://www.google.com">Google</a></p>
+			</aside>
+			
+			
+			<footer data-role="footer">
+				<div id="left-footer">
+	
+					<h4>Site Map</h4>
+					<li><a href="index.html" title="Home">Home</a></li>
+					<li><a href="studies.html" title="Studies">Studies</a></li>
+					<li><a href="career.html" title="Professional Career">Professional Career</a></li>
+					<li><a href="hobbies.html" title="Hobbies and Family Events">Hobbies and Family Events</a></li>				
+				</div>
+	
+				<div id="right-footer">	
+					<h4>Contact Me</h4>
+					<p>Phone: (+254) 71123456789</p>
+					<p>Email: john@example.com</p>
+				</div>
+		</footer>	
+	</body>
+</html>
