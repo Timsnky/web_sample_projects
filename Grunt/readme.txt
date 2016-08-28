@@ -1,0 +1,1 @@
+We need to run npm install or update to get the grunt watch, uglify, sass, imagemin and concate packages 
